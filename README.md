@@ -117,7 +117,7 @@ Is sufficent
 
 1. Set environment variable:
    ```sh
-   export CEPH_RELEASE=18.2.2
+   export CEPH_RELEASE=19.2.1
    ```
 
 2. Download and install CephADM:
@@ -169,6 +169,7 @@ Is sufficent
    mkdir -p /mnt/ceph
    mount -t ceph <mon-ip>:6789:/ /mnt/ceph
    ```
+Abow did'ent Work for mw, below command did
 
    ```sh
    mkdir -p /mnt/ceph
