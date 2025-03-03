@@ -1,4 +1,8 @@
 
+Based on https://github.com/theNetworkChuck/403_frankeNASS
+
+WIP upgrading doc to ceph release squid
+
 
 # Building a FrankeNASS with Ceph
 
@@ -74,10 +78,18 @@ In this tutorial, we will build a NAS using a variety of old hardware and the op
    ```
 
 2. Wipe storage devices:
+
+Chuck suggests
    ```sh
    sudo sgdisk --zap-all /dev/sdX
    sudo wipefs --all /dev/sdX
    ```
+
+Hovever I found that:
+   ```sh
+   cfdisk -z /dev/sdX
+   ```
+Is sufficent
 
 #### 4.3. Install Required Software
 
@@ -125,7 +137,7 @@ In this tutorial, we will build a NAS using a variety of old hardware and the op
 
 1. Copy SSH keys to hosts:
    ```sh
-   ssh-copy-id root@<host-ip>
+   ssh-copy-id -f -i /etc/ceph/ceph.pub root@<host-ip>
    ```
 
 2. Add hosts to the Ceph cluster:
@@ -157,6 +169,14 @@ In this tutorial, we will build a NAS using a variety of old hardware and the op
    mkdir -p /mnt/ceph
    mount -t ceph <mon-ip>:6789:/ /mnt/ceph
    ```
+
+   ```sh
+   mkdir -p /mnt/ceph
+   mount -t ceph admin@.cephfs=/ /mnt/ceph/
+   ```
+
+The rest is untrestering to me
+
 
 3. Install and configure Samba for Windows access:
    ```sh
