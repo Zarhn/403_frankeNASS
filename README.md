@@ -3,8 +3,18 @@ Based on https://github.com/theNetworkChuck/403_frankeNASS
 
 WIP upgrading doc to ceph release squid
 
+TODO:
+Change to proper html and/or docx document
+Add nfs Mount system
+Add Windows Mount through ceph-dokan
+Maybe other useful guides.
 
-# Building a FrankeNASS with Ceph
+NOTTODO:
+Samba I won't touch samba intergation as I beleave samba 
+is unnessery complicated. nfs-client is supported by Windows now 
+(Must be enabled thugh Windows add/remove features) and ceph suport nfs.
+
+# Building a FrankeNASS with ceph
 
 In this tutorial, we will build a NAS using a variety of old hardware and the open-source storage solution Ceph. Follow along with the video and the steps below.
 
